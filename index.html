@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>reCAPTCHA v3</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!-- Cambia 6LcZu9QUAAAAACaj-WBiVIQUlr94vfCC8DUpIanS por tu clave de sitio web -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcZu9QUAAAAACaj-WBiVIQUlr94vfCC8DUpIanS"></script>
+    <script src="recaptcha.js"></script>
+  </head>
+  <body>
+    <h1>Formulario de registro</h1>
+    <form id="form" action="http://localhost:3000/form-post" method="post">      
+      <input type="email" id="email" name="email">          
+      <input type="submit" value="submit">          
+    </form>
+  </body>
+</html>
