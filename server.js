@@ -1,8 +1,9 @@
 const express = require('express');
 const axios = require('axios');
+import cors from 'cors';
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 // Cambia 'TU-CLAVE-SECRETA' por tu clave secreta
 const RECAPTCHA_V3_SECRET_KEY = '6LfOucIpAAAAAFLC0ZZz6ZtxRH8PrXhkEbu8sjZJ';
 
@@ -41,5 +42,7 @@ app.post('/form-post', async (req, res) => {
     res.status(500).send('Error al verificar reCAPTCHA');
   }
 });
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/index.html'));
+});
 app.listen(3000, () => console.log('Servidor corriendo en puerto 3000'));
