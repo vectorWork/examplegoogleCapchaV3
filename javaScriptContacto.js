@@ -2,9 +2,10 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 app.use(express.json());
+require('dotenv').config();
 
 // Cambia 'TU-CLAVE-SECRETA' por tu clave secreta
-const RECAPTCHA_V3_SECRET_KEY = '6LfOucIpAAAAAFLC0ZZz6ZtxRH8PrXhkEbu8sjZJ';
+const RECAPTCHA_V3_SECRET_KEY = process.env.RECAPTCHA_V3_SECRET_KEY;
 
 app.post('/form-post', async (req, res) => {
   const token = req.body.token;
