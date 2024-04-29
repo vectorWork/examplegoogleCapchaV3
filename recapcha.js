@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
               document.getElementById('recaptchaResponse');
             recaptchaResponse.value = token; // Set the recaptcha response
             console.log(token);
-            fetch('/send.php', {
+            fetch('/form-post', {
               method: 'POST',
               body: new FormData(form), // Send the form data
             })
