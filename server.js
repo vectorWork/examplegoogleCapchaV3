@@ -34,9 +34,10 @@ app.post('/form-post', async (req, res) => {
     ) {
       // Si entra aqui, es un humano, puedes procesar el formulario
       res.send('ok!, eres un humano');
+      // res.status(200).json({ res: 'ok!, eres un humano' });
     } else {
       // Si entra aqui, es un robot....
-      res.send('Lo siento, parece que eres un Robot');
+      res.status(403).json({ error: 'Lo siento, parece que eres un Robot' });
     }
   } catch (error) {
     console.error(error);
