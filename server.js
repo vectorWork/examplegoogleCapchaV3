@@ -10,7 +10,6 @@ const RECAPTCHA_V3_SECRET_KEY = process.env.RECAPTCHA_V3_SECRET_KEY;
 
 app.post('/form-post', async (req, res) => {
   const token = req.body.token;
-  const action = req.body.action;
   console.log(token, action);
   try {
     const response = await axios.post(
@@ -27,11 +26,7 @@ app.post('/form-post', async (req, res) => {
     const arrResponse = response.data;
     console.log(arrResponse);
     // verificar la respuesta
-    if (
-      arrResponse.success == '1' &&
-      arrResponse.action == action &&
-      arrResponse.score >= 0.5
-    ) {
+    if (arrResponse.success == '1' && arrResponse.score >= 0.5) {
       // Si entra aqui, es un humano, puedes procesar el formulario
       res.send('ok!, eres un humano');
       res.status(200).json({ res: 'ok!, eres un humano' });
