@@ -25,7 +25,7 @@ app.post('/form-post', async (req, res) => {
     );
 
     const arrResponse = response.data;
-
+    console.log(arrResponse);
     // verificar la respuesta
     if (
       arrResponse.success == '1' &&
