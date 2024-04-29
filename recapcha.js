@@ -60,10 +60,10 @@ window.addEventListener('load', function () {
             let recaptchaResponse =
               document.getElementById('recaptchaResponse');
             recaptchaResponse.value = token; // Set the recaptcha response
-            console.log(token);
+            console.log(recaptchaResponse);
             fetch('/form-post', {
               method: 'POST',
-              body: new FormData(form), // Send the form data
+              body: { fomr: new FormData(form), token }, // Send the form data
             })
               .then((response) => response.text())
               .then((response) => {
