@@ -67,7 +67,7 @@ window.addEventListener('load', function () {
               .then((response) => response.text())
               .then((response) => {
                 console.log(response);
-                const responseText = JSON.parse(response); // Get the response
+                const responseText = response; // Get the response
                 if (responseText.error !== '') {
                   // If there is an error
                   document.querySelector('#alert').innerText =
