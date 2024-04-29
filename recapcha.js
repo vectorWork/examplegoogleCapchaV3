@@ -26,11 +26,11 @@ window.addEventListener('load', function () {
 
   'use strict'; // Strict mode for JavaScript
 
-  const form = document.querySelector('.form'); // Get the form
+  const form = document.querySelector('.contact'); // Get the form
 
   form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default action of the form
-    let fields = document.querySelectorAll('.form .form-control'); // Get all the fields
+    let fields = document.querySelectorAll('.contact .form-control'); // Get all the fields
     let valid = true;
     for (var i = 0; i < fields.length; i++) {
       fields[i].classList.remove('no-error'); // Remove the no-error class from all fields
@@ -54,15 +54,15 @@ window.addEventListener('load', function () {
       grecaptcha.ready(function () {
         // Wait for the recaptcha to be ready
         grecaptcha
-          .execute(RECAPTCHA_V3_PUBLIC_KEY, {
+          .execute('yoursitekey', {
             action: 'contact',
           }) // Execute the recaptcha
           .then(function (token) {
             let recaptchaResponse =
               document.getElementById('recaptchaResponse');
             recaptchaResponse.value = token; // Set the recaptcha response
-
-            fetch('/form-post', {
+            console.log(token);
+            fetch('/send.php', {
               method: 'POST',
               body: new FormData(form), // Send the form data
             })
