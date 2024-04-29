@@ -11,7 +11,7 @@ const RECAPTCHA_V3_SECRET_KEY = process.env.RECAPTCHA_V3_SECRET_KEY;
 app.post('/form-post', async (req, res) => {
   const token = req.body.token;
   const action = req.body.action;
-
+  console.log(token, action);
   try {
     const response = await axios.post(
       'https://www.google.com/recaptcha/api/siteverify',
@@ -34,7 +34,7 @@ app.post('/form-post', async (req, res) => {
     ) {
       // Si entra aqui, es un humano, puedes procesar el formulario
       res.send('ok!, eres un humano');
-      // res.status(200).json({ res: 'ok!, eres un humano' });
+      res.status(200).json({ res: 'ok!, eres un humano' });
     } else {
       // Si entra aqui, es un robot....
       res.status(403).json({ error: 'Lo siento, parece que eres un Robot' });

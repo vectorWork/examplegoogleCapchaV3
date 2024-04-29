@@ -27,7 +27,6 @@ window.addEventListener('load', function () {
   ('use strict'); // Strict mode for JavaScript
 
   const form = document.querySelector('.contact'); // Get the form
-  console.log('Cosas', form);
   form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default action of the form
     let fields = document.querySelectorAll('.contact .form-control'); // Get all the fields
