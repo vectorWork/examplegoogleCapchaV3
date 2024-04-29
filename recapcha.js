@@ -54,7 +54,7 @@ window.addEventListener('load', function () {
       grecaptcha.ready(function () {
         // Wait for the recaptcha to be ready
         grecaptcha
-          .execute('yoursitekey', {
+          .execute(RECAPTCHA_V3_PUBLIC_KEY, {
             action: 'contact',
           }) // Execute the recaptcha
           .then(function (token) {
