@@ -1,5 +1,5 @@
 // require('dotenv').config();
-const RECAPTCHA_V3_PUBLIC_KEY = process.env.RECAPTCHA_V3_PUBLIC_KEY;
+// const RECAPTCHA_V3_PUBLIC_KEY = process.env.RECAPTCHA_V3_PUBLIC_KEY;
 
 // $('#form').submit(function (event) {
 //   event.preventDefault();
@@ -54,7 +54,7 @@ window.addEventListener('load', function () {
       grecaptcha.ready(function () {
         // Wait for the recaptcha to be ready
         grecaptcha
-          .execute(RECAPTCHA_V3_PUBLIC_KEY, {
+          .execute('6LczFsUpAAAAAIpQcVdrtLdxKcu_Hv2ecqYIhQWL', {
             action: 'contact',
           }) // Execute the recaptcha
           .then(function (token) {
