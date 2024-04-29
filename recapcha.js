@@ -23,8 +23,8 @@ const RECAPTCHA_V3_PUBLIC_KEY = process.env.RECAPTCHA_V3_PUBLIC_KEY;
 
 window.addEventListener('load', function () {
   // Wait for the page to load
-
-  'use strict'; // Strict mode for JavaScript
+  console.log('Cosas');
+  ('use strict'); // Strict mode for JavaScript
 
   const form = document.querySelector('.contact'); // Get the form
 
