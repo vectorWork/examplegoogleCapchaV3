@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const RECAPTCHA_V3_PUBLIC_KEY = process.env.RECAPTCHA_V3_PUBLIC_KEY;
 
 // $('#form').submit(function (event) {
@@ -23,11 +23,11 @@ const RECAPTCHA_V3_PUBLIC_KEY = process.env.RECAPTCHA_V3_PUBLIC_KEY;
 
 window.addEventListener('load', function () {
   // Wait for the page to load
-  console.log('Cosas');
+
   ('use strict'); // Strict mode for JavaScript
 
   const form = document.querySelector('.contact'); // Get the form
-
+  console.log('Cosas', form);
   form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default action of the form
     let fields = document.querySelectorAll('.contact .form-control'); // Get all the fields
