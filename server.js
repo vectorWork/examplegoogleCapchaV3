@@ -12,7 +12,7 @@ const RECAPTCHA_V3_SECRET_KEY = process.env.RECAPTCHA_V3_SECRET_KEY;
 
 app.post('/form-post', async (req, res) => {
   const token = req.body.token;
-  console.log(token);
+  console.log(req.body);
   try {
     const response = await axios.post(
       'https://www.google.com/recaptcha/api/siteverify',
