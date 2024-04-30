@@ -46,6 +46,8 @@ window.addEventListener('load', function () {
       }
     }
     if (valid) {
+      console.log(new FormData(form));
+
       // If all the fields are valid
       document.querySelector('.formfields').style.display = 'none';
       document.querySelector('#alert').innerText =
