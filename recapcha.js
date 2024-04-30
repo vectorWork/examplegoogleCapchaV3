@@ -62,7 +62,10 @@ window.addEventListener('load', function () {
             recaptchaResponse.value = token; // Set the recaptcha response
             fetch('/form-post', {
               method: 'POST',
-              body: { token: recaptchaResponse.value }, // Send the form data
+              headers: {
+                'Content-Type': 'application/json', // Indicate that you're sending JSON
+              },
+              body: JSON.stringify({ token: recaptchaResponse.value }), // Convert to JSON
             })
               .then((response) => response.text())
               .then((response) => {
