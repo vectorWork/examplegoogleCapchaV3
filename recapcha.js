@@ -46,8 +46,20 @@ window.addEventListener('load', function () {
       }
     }
     if (valid) {
-      console.log(form.elements);
+      // Crear un objeto para almacenar los datos del formulario
+      let formData = {};
 
+      // Iterar sobre todos los elementos del formulario
+      for (let i = 0; i < form.elements.length; i++) {
+        let field = form.elements[i];
+
+        // Asegurarse de que el campo tiene un nombre (los campos sin nombre no se envían con el formulario)
+        if (field.name) {
+          // Agregar el valor del campo al objeto formData
+          formData[field.name] = field.value;
+        }
+      }
+      console.log(formData);
       // If all the fields are valid
       document.querySelector('.formfields').style.display = 'none';
       document.querySelector('#alert').innerText =
